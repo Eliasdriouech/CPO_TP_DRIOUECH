@@ -5,6 +5,12 @@
 
 package com.mycompany.tp3_heroic_fantasy_driouech;
 
+import personnage.personnage;
+import personnage.Magicien;
+import personnage.Guerrier;
+import Armes.Epee;
+import Armes.Baton;
+import Armes.Armes;
 import java.util.ArrayList;
 
 /**
@@ -25,6 +31,16 @@ public class TP3_Heroic_Fantasy_DRIOUECH {
       stuff.add(branche);
       for (int i=0; i<stuff.size();i++){
       System.out.println( stuff.get(i));
+      
+      ArrayList<personnage> ekp = new ArrayList<personnage>();
+      Magicien nul = new Magicien("Gandalf",65,true) ;
+        Magicien guez = new Magicien("Garcimore",44,false) ;
+        Guerrier jaimi = new Guerrier("Lannister", 45, true) ;
+        Guerrier keh = new Guerrier( "Conan", 78,false) ;
+        ekp.add(nul);
+      ekp.add(jaimi);
+      ekp.add(guez);
+      ekp.add(keh);
       }
 
     }
