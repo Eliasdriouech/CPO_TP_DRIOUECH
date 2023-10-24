@@ -34,7 +34,7 @@ public class TP3_Heroic_Fantasy_DRIOUECH {
       
       ArrayList<personnage> ekp = new ArrayList<personnage>();
       Magicien nul = new Magicien("Gandalf",65,true) ;
-        Magicien guez = new Magicien("Garcimore",44,false) ;
+        Magicien guez = new Magicien("Garcimore",44,false,null) ;
         Guerrier jaimi = new Guerrier("Lannister", 45, true) ;
         Guerrier keh = new Guerrier( "Conan", 78,false) ;
         ekp.add(nul);
