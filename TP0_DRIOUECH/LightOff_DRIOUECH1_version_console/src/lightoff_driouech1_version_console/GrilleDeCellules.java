@@ -42,26 +42,26 @@ public class GrilleDeCellules {
         for (int i = 0; i < n; i++) {
             int f = generateurAleat.nextInt(101);
             if (f < 50) {
-                int r = generateurAleat.nextInt(10);
-                for (int j = 0; j < 10; j++) {
+                int r = generateurAleat.nextInt(nbLignes);
+                for (int j = 0; j < nbColonnes; j++) {
                     matriceCellules[r][j].activerCellule();
                 }
             }
             if (f > 50 || f < 100) {
-                int r = generateurAleat.nextInt(10);
-                for (int j = 0; j < 10; j++) {
+                int r = generateurAleat.nextInt(nbColonnes);
+                for (int j = 0; j < nbColonnes; j++) {
                     matriceCellules[j][r].activerCellule();
                 }
             }
             if (f == 100) {
                 
-                for (int j = 0; j < 10; j++) {
+                for (int j = 0; j < nbColonnes; j++) {
                     matriceCellules[j][j].activerCellule();
                 }
                 if (f == 101) {
       
-                    for (int j = 0; j < 10; j++) {
-                        matriceCellules[j][9 - j].activerCellule();
+                    for (int j = 0; j < nbColonnes; j++) {
+                        matriceCellules[j][nbColonnes-1 - j].activerCellule();
                     }
                 }
 
@@ -117,14 +117,14 @@ public void activerDiagonaleMontante() {
         }
         gridString.append("\n");
         for (int i = 0; i < nbLignes; i++) {
-            gridString.append("--------------------------------\n");
+            gridString.append("-------------------------------------------\n");
             gridString.append(i + " |");
             for (int j = 0; j < nbColonnes; j++) {
                 gridString.append(" " + (matriceCellules[i][j].getEtat() ? "X" : "O") + " |");
             }
             gridString.append("\n");
         }
-        gridString.append("--------------------------------\n");
+        gridString.append("---------------------------------------------\n");
 
         return gridString.toString();
     }

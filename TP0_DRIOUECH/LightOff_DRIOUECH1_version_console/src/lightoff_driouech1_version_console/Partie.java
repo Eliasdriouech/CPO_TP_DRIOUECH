@@ -1,5 +1,6 @@
 package lightoff_driouech1_version_console;
 
+import java.util.Random;
 import lightoff_driouech1_version_console.GrilleDeCellules;
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ import java.util.Scanner;
  * @author dreli
  */
 public class Partie {
-    GrilleDeCellules grille=new GrilleDeCellules(10,10);
+    GrilleDeCellules grille1=new GrilleDeCellules(10,10);
     int nbCoups;
     public Partie(){
    nbCoups=0;
@@ -21,37 +22,35 @@ public class Partie {
             
 }
 public void initialiserPartie() {
-    grille.eteindreToutesLesCellules();
-    grille.melangerMatriceAleatoirement(10);
-
-    
-    
+    grille1.eteindreToutesLesCellules();
+                    grille1.melangerMatriceAleatoirement(10);
 }
+
     public void lancerPartie() {
 
         initialiserPartie();
-
+int tcho;
         Scanner scanner = new Scanner(System.in);
-
- 
-
+String coup;
+ int nb;
+     Random generateurAleat = new Random();
         System.out.println("Bienvenue dans le jeu LightOff!");
+tcho=generateurAleat.nextInt(2,20);
+ grille1.melangerMatriceAleatoirement(10);
 
- 
-
-        while (!grille.cellulesToutesEteintes()) {
+        while (!grille1.cellulesToutesEteintes()) {
 
             System.out.println("Grille actuelle :");
 
-            System.out.println(grille);
-
- 
+            System.out.println(grille1);
 
             System.out.println("Entrez un coup: \nl pour ligne \n c pour colonne \n d pour diagonale) :");
 
-            String coup = scanner.nextLine();
+            coup = scanner.nextLine();
+            
             System.out.println("Entrez un nombre");
-            int nb = scanner.nextInt();
+            nb=0;
+             nb = scanner.nextInt();
  
 
             // Activer la ligne, la colonne ou la diagonale correspondante
@@ -60,19 +59,19 @@ public void initialiserPartie() {
 
                 case "l":
 
-                    grille.activerLigneDeCellules(nb); // Par exemple, vous pouvez activer la première ligne
+                    grille1.activerLigneDeCellules(nb); // Par exemple, vous pouvez activer la première ligne
 
                     break;
 
                 case "c":
 
-                    grille.activerColonneDeCellules(nb); // Par exemple, vous pouvez activer la première colonne
+                    grille1.activerColonneDeCellules(nb); // Par exemple, vous pouvez activer la première colonne
 
                     break;
 
                 case "d":
 
-                    grille.activerDiagonaleDescendante(); // Par exemple, vous pouvez activer la diagonale descendante
+                    grille1.activerDiagonaleDescendante(); // Par exemple, vous pouvez activer la diagonale descendante
 
                     break;
 
